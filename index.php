@@ -1,5 +1,10 @@
 <?php
 	require "lib/dbCon.php";
+	
+	if (isset($_GET["p"]))
+		$p = $_GET["p"];
+	else
+		$p = "";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,6 +22,9 @@
     
     <div id="menu-vp">
     	<!--block/menu.php-->
+        <?php
+			require "blocks/menu.php";
+		?>
     </div>
       <div id="midheader-vp">
     	<div id="left">
@@ -28,29 +36,51 @@
         </div>
         <div id="right">
 			<!--blocks/thongtinchung.php-->
+            <?php
+				require "blocks/thongtinchung.php";
+			?>
         </div>
     </div>
     <div class="clear"></div>
 
     <div id="slide-vp">
     	<!--blocks/top_trang_chu.php-->
-
+		<?php
+			require "blocks/top_trang_chu.php";
+		?>
         <div id="slide-right">
         <!--blocks/quangcao_top_phai.php-->
+        <?php
+			require "blocks/quangcao_top_phai.php";
+		?>
         </div>
     </div>
 
   	<div id="content-vp">
     	<div id="content-left">
 		<!--blocks/cot_trai.php-->
+        <?php
+			require "blocks/cot_trai.php";
+		?>
         </div>
         <div id="content-main">
 			
 			<!--PAGES-->
+            <?php
+				switch ($p){
+					case "tintrongloai": require "pages/tintrongloai.php"; break;
+					case "chitiettin": require "pages/chitiettin.php"; break;
+					default : require "pages/trangchu.php";
+				}
+			?>
+            
             
         </div>
         <div id="content-right">
 		<!--blocks/cot_phai.php-->
+        <?php
+			require "blocks/cot_phai.php";
+		?>
         </div>
 
     <div class="clear"></div>
@@ -59,10 +89,16 @@
     
      <div id="thongtin">
     	<!--blocks/thongtindoanhnghiep.php-->
+        <?php
+			require "blocks/thongtindoanhnghiep.php";
+		?>
     </div>
     <div class="clear"></div>
     <div id="footer">
     	<!--blocks/footer.php-->
+        <?php
+			require "blocks/footer.php";
+		?>
         
         <div class="ft-bot">
             <div class="bot1"><img src="images/logo.gif" /></div>
