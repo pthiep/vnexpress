@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 *{ margin:0; padding:0}
-body{ font-family:Arial, sans-serif; font-size:12px}
+body{ font-family:Arial, Tahoma, Geneva, sans-serif; font-size:12px}
 a{ text-decoration:none}
 ul{ list-style:none}
 .left{ float:left; margin:0 2px}
