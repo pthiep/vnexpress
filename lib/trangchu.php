@@ -24,4 +24,17 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
+	
+	function TinXemNhieuNhat()
+	{
+				global $dbh;
+		$qr = "
+			Select * from tin
+			order by SoLanXem desc
+			limit 0,6
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 ?>
