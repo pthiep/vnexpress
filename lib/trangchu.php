@@ -37,4 +37,44 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
+	
+	function Tinmoinhat_TheoLoaiTin_Mottin($idLT)
+	{
+		global $dbh;
+		$qr = "
+			Select * from tin
+			where idLT = $idLT
+			order by idTin desc
+			limit 0,1
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
+	
+	function Tinmoinhat_TheoLoaiTin_Bontin($idLT)
+	{
+		global $dbh;
+		$qr = "
+			Select * from tin
+			where idLT = $idLT
+			order by idTin desc
+			limit 1,6
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
+	
+	function TenLoaiTin($idLT)
+	{
+		global $dbh;
+		$qr = "
+			Select Ten from loaitin
+			where idLT = $idLT
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll()[0]['Ten'];
+	}
 ?>
