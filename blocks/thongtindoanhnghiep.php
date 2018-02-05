@@ -87,23 +87,17 @@
 
         <!-- Slides Container -->
         <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1000px; height: 150px; overflow: hidden;">
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
-            <div><img u="image" src="images/1.png" /></div>
-            <div><img u="image" src="images/2.png" /></div>
-            <div><img u="image" src="images/3.png" /></div>
+            <?php
+              $quangcao = QuangCao(2);
+
+              foreach ($quangcao as $qc) {
+            ?>
+              <div><img u="image" src="upload/quangcao/<?php echo $qc['urlHinh']?>" /></div>
+            <?php
+              }
+            ?>
         </div>
-        
+
         <!-- Bullet Navigator Skin Begin -->
         <style>
             /* jssor slider bullet navigator skin 03 css */
@@ -131,7 +125,7 @@
             <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
         </div>
         <!-- Bullet Navigator Skin End -->
-        
+
         <!-- Arrow Navigator Skin Begin -->
         <style>
             /* jssor slider arrow navigator skin 03 css */
