@@ -1,12 +1,13 @@
 <?php
 	require "lib/dbCon.php";
 	require "lib/trangchu.php";
-	
+
 	if (isset($_GET["p"]))
 		$p = $_GET["p"];
 	else
 		$p = "";
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -20,7 +21,7 @@
 	<div id="header-vp">
     	<div id="logo"><img src="images/logo.gif" /></div>
     </div>
-    
+
     <div id="menu-vp">
     	<!--block/menu.php-->
         <?php
@@ -65,7 +66,7 @@
 		?>
         </div>
         <div id="content-main">
-			
+
 			<!--PAGES-->
             <?php
 				switch ($p){
@@ -74,8 +75,8 @@
 					default : require "pages/trangchu.php";
 				}
 			?>
-            
-            
+
+
         </div>
         <div id="content-right">
 		<!--blocks/cot_phai.php-->
@@ -85,9 +86,9 @@
         </div>
 
     <div class="clear"></div>
-    	
+
     </div>
-    
+
      <div id="thongtin">
     	<!--blocks/thongtindoanhnghiep.php-->
         <?php
@@ -100,7 +101,7 @@
         <?php
 			require "blocks/footer.php";
 		?>
-        
+
         <div class="ft-bot">
             <div class="bot1"><img src="images/logo.gif" /></div>
             <div class="bot2">
@@ -108,17 +109,17 @@
                      <p>® VnExpress giữ bản quyền nội dung trên website này.</p>
             </div>
             <div class="bot3">
-                
+
                      <p><a href="http://fptad.net/qc/V/vnexpress/2014/07/">VnExpress tuyển dụng</a>   <a href="http://polyad.net/Polyad/Lien-he.htm">Liên hệ quảng cáo</a> / <a href="/contactus">Liên hệ Tòa soạn</a></p>
                      <p><a href="http://vnexpress.net/contact.htm" target="_blank" style="color: #686E7A;font: 11px arial;padding: 0 4px;text-decoration: none;">Thông tin Tòa soạn: </a><span>0123.888.0123</span> (HN) - <span>0129.233.3555</span> (TP HCM)</p>
-                  
+
             </div>
         </div>
     </div>
-    
-    
-    
-    
+
+
+
+
 </div>
 
 </body>

@@ -11,7 +11,7 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
-	
+
 	function Tinmoinhat_Bontin()
 	{
 		global $dbh;
@@ -24,7 +24,7 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
-	
+
 	function TinXemNhieuNhat()
 	{
 				global $dbh;
@@ -37,7 +37,7 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
-	
+
 	function Tinmoinhat_TheoLoaiTin_Mottin($idLT)
 	{
 		global $dbh;
@@ -51,7 +51,7 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
-	
+
 	function Tinmoinhat_TheoLoaiTin_Bontin($idLT)
 	{
 		global $dbh;
@@ -65,7 +65,7 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
-	
+
 	function TenLoaiTin($idLT)
 	{
 		global $dbh;
@@ -76,5 +76,17 @@
 		$sth = $dbh->prepare($qr);
 		$sth->execute();
 		return $sth->fetchAll()[0]['Ten'];
+	}
+
+	function QuangCao($vitri)
+	{
+		global $dbh;
+		$qr = "
+			Select * from quangcao
+			where vitri = $vitri
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
 	}
 ?>

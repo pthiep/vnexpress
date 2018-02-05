@@ -1,6 +1,10 @@
-<img width="280" src="images/1.png" />
-<div style="height:10px"></div>
-<img width="280" src="images/2.png" />
-<div style="height:10px"></div>
-<img width="280" src="images/3.png" />
-<div style="height:10px"></div>
+<?php
+  $quangcao = QuangCao(1);
+  foreach ($quangcao as $qc) {
+?>
+    <a href="<?php echo $qc['Url']; ?>">
+    <img width="280" src="images/<?php echo $qc['urlHinh']; ?>" />
+    <div style="height:10px"></div>
+<?php
+  }
+?>
