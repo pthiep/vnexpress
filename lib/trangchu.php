@@ -89,4 +89,27 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
+
+	function DanhSachTheLoai()
+	{
+		global $dbh;
+		$qr = "
+			Select * from theloai
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
+
+	function DanhSachLoaiTin_Theo_TheLoai($idTL)
+	{
+		global $dbh;
+		$qr = "
+			Select * from loaitin
+			where idTL = $idTL
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 ?>
