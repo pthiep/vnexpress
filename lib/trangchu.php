@@ -112,4 +112,32 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
+
+	function TinMoi_BenTrai($idTL)
+	{
+		global $dbh;
+		$qr = "
+			Select * from tin
+			where idTL = $idTL
+			order by idTin desc
+			limit 0,1
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
+
+	function TinMoi_BenPhai($idTL)
+	{
+		global $dbh;
+		$qr = "
+			Select * from tin
+			where idTL = $idTL
+			order by idTin desc
+			limit 1,2
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 ?>
