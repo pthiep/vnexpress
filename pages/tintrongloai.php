@@ -5,11 +5,22 @@
 <?php
 	$bc= breadCrumb($idLT);
 ?>
+
 <div>
 	Trang chủ >> <?php echo $bc[0]['TenTL']; ?> >> <?php echo $bc[0]['Ten']; ?>
 </div>
 <?php
-	$tin = TinTheoLoaiTin($idLT);
+	$sotin1trang = 4;
+	if (isset($_GET['trang']))
+	{
+		$trang = $_GET['trang'];
+		settype($trang, "int");
+	}
+	else {
+		$trang = 1;
+	}
+	$from = ($trang - 1) * $sotin1trang;
+	$tin = TinTheoLoaiTin_PhanTrang($idLT, $from, $sotin1trang);
 
 	foreach ($tin as $lt) {
 ?>
@@ -38,3 +49,17 @@
 	}
 ?>
 <!-- box cat-->
+<div class	="phantrang">
+
+<?php
+	$tongsotin = SoTinTheoLoaiTin($idLT);
+	$tongsotrang = ceil($tongsotin / $sotin1trang);
+	for ($i = 1; $i <= $tongsotrang; $i++)
+	{
+?>
+		<a <?php if ($i == $trang) echo "style ='background-color: red;'"; ?>
+		} href="./index.php?p=tintrongloai&idLT=<?php echo $idLT; ?>&trang=<?php echo $i; ?>"><?php echo $i ?></a>
+<?php
+	}
+?>
+</div>
