@@ -153,4 +153,18 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
+
+	function breadCrumb($idLT)
+	{
+		global $dbh;
+		$qr = "
+			Select theloai.TenTL, loaitin.Ten
+			from theloai, loaitin
+			where theloai.idTL = loaitin.idTL
+			and idLT = $idLT
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 ?>

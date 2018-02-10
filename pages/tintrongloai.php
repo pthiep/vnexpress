@@ -1,6 +1,14 @@
 <?php
 	$idLT = $_GET['idLT'];
 	settype($idLT, "int");
+?>
+<?php
+	$bc= breadCrumb($idLT);
+?>
+<div>
+	Trang chủ >> <?php echo $bc[0]['TenTL']; ?> >> <?php echo $bc[0]['Ten']; ?>
+</div>
+<?php
 	$tin = TinTheoLoaiTin($idLT);
 
 	foreach ($tin as $lt) {

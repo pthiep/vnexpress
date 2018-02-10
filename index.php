@@ -60,15 +60,15 @@
 
   	<div id="content-vp">
     	<div id="content-left">
-		<!--blocks/cot_trai.php-->
+				<!--blocks/cot_trai.php-->
         <?php
-			require "blocks/cot_trai.php";
-		?>
-        </div>
+					require "blocks/cot_trai.php";
+				?>
+    </div>
         <div id="content-main">
 
 			<!--PAGES-->
-            <?php
+          <?php
 				switch ($p){
 					case "tintrongloai": require "pages/tintrongloai.php"; break;
 					case "chitiettin": require "pages/chitiettin.php"; break;
