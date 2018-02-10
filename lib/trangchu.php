@@ -140,4 +140,17 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
+
+	function TinTheoLoaiTin($idLT)
+	{
+		global $dbh;
+		$qr = "
+			Select * from tin
+			where idLT = $idLT
+			order by idTin desc
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 ?>
