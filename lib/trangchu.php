@@ -181,4 +181,16 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
+
+	function ChiTietTin($idTin)
+	{
+		global $dbh;
+		$qr = "
+			Select * from tin
+			where idTin = $idTin
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 ?>
