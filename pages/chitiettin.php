@@ -40,25 +40,18 @@
 <div id="tincungloai">
 <div class="clear"></div>
 	<ul>
-
+        <?php
+          $tincungloai = TinCungLoaiTin($idTin, $tin['idLT']);
+          foreach ($tincungloai as $t) {
+        ?>
         <li>
-             <a href="#"><img src="upload/tintuc/19-2436-1406522072_300x180.jpg" alt="Người nhà nạn nhân MH370 an ủi thân nhân hành khách MH17"></a> <br />
- 			 <a class="title" href="#">Người nhà nạn nhân MH370 an ủi thân nhân hành khách MH17</a>
+             <a href="./index.php?p=chitiettin&idTin=<?php echo $t['idTin']; ?>"><img src="upload/tintuc/<?php echo $t['urlHinh']; ?>" alt="<?php echo $t['TieuDe']; ?>"></a> <br />
+ 			 <a class="title" href="./index.php?p=chitiettin&idTin=<?php echo $t['idTin']; ?>"><?php echo $t['TieuDe']; ?></a>
              <span class="no_wrap">
         </li>
-
-        <li>
-             <a href="#"><img src="upload/tintuc/19-2436-1406522072_300x180.jpg" alt="Người nhà nạn nhân MH370 an ủi thân nhân hành khách MH17"></a> <br />
- 			 <a class="title" href="#">Người nhà nạn nhân MH370 an ủi thân nhân hành khách MH17</a>
-             <span class="no_wrap">
-        </li>
-
-        <li>
-             <a href="#"><img src="upload/tintuc/19-2436-1406522072_300x180.jpg" alt="Người nhà nạn nhân MH370 an ủi thân nhân hành khách MH17"></a> <br />
- 			 <a class="title" href="#">Người nhà nạn nhân MH370 an ủi thân nhân hành khách MH17</a>
-             <span class="no_wrap">
-        </li>
-
+        <?php
+          }
+        ?>
 
     </ul>
 </div>

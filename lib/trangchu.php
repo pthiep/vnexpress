@@ -193,4 +193,19 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
+
+	function TinCungLoaiTin($idTin, $idLT)
+	{
+		global $dbh;
+		$qr = "
+			Select * from tin
+			where idTin <> $idTin
+			and idLT = $idLT
+			order by rand()
+			limit 0,3
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 ?>
