@@ -220,4 +220,17 @@
 		$sth = $dbh->prepare($qr);
 		$sth->execute();
 	}
+
+	function TimKiem($tukhoa)
+	{
+		global $dbh;
+		$qr = "
+			Select * from tin
+			where TieuDe Regexp '$tukhoa'
+			order by idTin desc
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+		return $sth->fetchAll();
+	}
 ?>
