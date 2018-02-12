@@ -8,6 +8,7 @@
     $idTin = 1;
   }
   $tin = ChiTietTin($idTin)[0];
+  CapNhatSoLanXemTin($idTin);
 ?>
 <h1 class="title"><?php echo $tin['TieuDe']; ?></h1>
 <div class="des">

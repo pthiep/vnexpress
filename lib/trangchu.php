@@ -208,4 +208,16 @@
 		$sth->execute();
 		return $sth->fetchAll();
 	}
+
+	function CapNhatSoLanXemTin($idTin)
+	{
+		global $dbh;
+		$qr = "
+			Update tin
+			set SoLanXem = SoLanXem + 1;
+			where idTin = $idTin
+		";
+		$sth = $dbh->prepare($qr);
+		$sth->execute();
+	}
 ?>
